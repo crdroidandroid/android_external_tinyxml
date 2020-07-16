@@ -369,6 +369,10 @@ const TiXmlNode* TiXmlNode::FirstChild( const char * _value ) const
 	return 0;
 }
 
+TiXmlNode* TiXmlNode::FirstChild( const char * _value )
+{
+	return const_cast< TiXmlNode* > ((const_cast< const TiXmlNode* >(this))->FirstChild( _value ));
+}
 
 const TiXmlNode* TiXmlNode::LastChild( const char * _value ) const
 {

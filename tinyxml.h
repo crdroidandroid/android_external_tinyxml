@@ -523,11 +523,7 @@ public:
 	TiXmlNode* FirstChild()						{ return firstChild; }
 	const TiXmlNode* FirstChild( const char * value ) const;			///< The first child of this node with the matching 'value'. Will be null if none found.
 	/// The first child of this node with the matching 'value'. Will be null if none found.
-	TiXmlNode* FirstChild( const char * _value ) {
-		// Call through to the const version - safe since nothing is changed. Exiting syntax: cast this to a const (always safe)
-		// call the method, cast the return back to non-const.
-		return const_cast< TiXmlNode* > ((const_cast< const TiXmlNode* >(this))->FirstChild( _value ));
-	}
+	TiXmlNode* FirstChild( const char * value );
 	const TiXmlNode* LastChild() const	{ return lastChild; }		/// The last child of this node. Will be null if there are no children.
 	TiXmlNode* LastChild()	{ return lastChild; }
 	
